@@ -13,6 +13,7 @@ const { resolveSoa } = require('dns')
 //console.log(path.join(__dirname, '../public'))
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //define paths for express config
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -151,6 +152,6 @@ app.get('*', (req, res) => {
 //to start the server in a specific port
 // common development port: 3000
 
-app.listen(3000, () => {
-    console.log('Server Started on port 3000')   //to be displayed only to devloper
+app.listen(port, () => {
+    console.log('Server Started on port' + port)   //to be displayed only to devloper
 })
